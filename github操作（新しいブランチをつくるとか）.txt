@@ -1,0 +1,36 @@
+﻿git branchでブランチを作成
+	$　git branch <新しいブランチ名>
+	
+ブランチを作成した後に、そのブランチに移動したい
+	$　git checkout <新しいブランチ名>
+	
+プッシュ前は忘れずに！作業ブランチを最新に
+(1)fetchを使用して、最新を取り込む
+	$　git fetch origin
+(2)念のためチェックアウト
+	$　git checkout <新しいブランチ名>
+(3)mergeを使用して取り込んだ最新状態を現在のブランチへ統合する
+	$　git merge origin/master
+	
+思い切ってプッシュ	
+	git push -u origin <新しいブランチ名>
+
+(リモートHubで <新しいブランチ名>を作る必要はない）
+
+
+あとはいつもどおりプッシュ
+
+$　git add ファイル名
+$　git commit -m "メッセージを入れます"
+$　git push -u origin <新しいブランチ名>
+二回目からのPushは、git pushだけでOK！
+$　git push
+
+
+終わったらgit checkout masterでmasterに戻る！
+
+
+	
+GitHubに間違ってpushしたcommitを消す。
+リモートのpushを1つだけ戻したい時
+	$ git push -f origin HEAD^:ブランチ名
